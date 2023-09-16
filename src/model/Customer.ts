@@ -6,13 +6,13 @@ export class Customer {
   private id: Uuid;
   private name: string;
   private document: Document; // document vai variar em CPF e CNPJ então vou criar uma interface pra ele
-  constructor(id: Uuid,name: string,Document: Document){
+  constructor(id: Uuid, name: string, document: Document){
       this.id = id
       this.name = name
       this.document = document
     }
 
-    static create(id: string, name: string, document:string): Customer{
+    static create(id: string, name: string, document: string): Customer{
       const uuid = new Uuid(id)
       const documentIstance = DocumentFactory.create(document)
 
